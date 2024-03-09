@@ -1,0 +1,11 @@
+.appMainWindow{
+    background-color: black;
+}
+.tasksContainer{
+    background-color: black;
+    color: white;
+}
+.taskItem{
+    padding:10px;
+    border-radius: 10px;
+}

@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.16.0 -->
+<interface>
+  <!-- interface-name notesapp.ui -->
+  <requires lib="gtk" version="4.12"/>
+  <object class="GtkApplicationWindow" id="mainWindow">
+    <property name="default-height">480</property>
+    <property name="default-width">640</property>
+    <property name="icon-name">~/Downloads/notes64.png</property>
+    <child>
+      <object class="GtkBox" id="mainCont">
+        <property name="margin-bottom">2</property>
+        <property name="margin-end">2</property>
+        <property name="margin-start">2</property>
+        <property name="spacing">2</property>
+        <property name="vexpand">True</property>
+        <child>
+          <object class="GtkBox" id="notesListCont">
+            <property name="hexpand">True</property>
+            <property name="margin-end">2</property>
+            <property name="margin-start">2</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkLabel" id="tasksLabel">
+                <property name="justify">center</property>
+                <property name="label">My Tasks</property>
+                <property name="margin-bottom">5</property>
+                <property name="margin-top">10</property>
+                <property name="valign">start</property>
+                <property name="vexpand-set">True</property>
+                <style>
+                  <class name="notesText"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkListBox" id="notesCont">
+                <property name="hexpand">True</property>
+                <property name="show-separators">True</property>
+                <property name="vexpand">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="buttonCont">
+                <child>
+                  <object class="GtkButton" id="addNoteButton">
+                    <property name="icon-name">list-add-symbolic</property>
+                    <style>
+                      <class name="bottomButtons"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="removeNoteButton">
+                    <property name="halign">end</property>
+                    <property name="hexpand">True</property>
+                    <property name="icon-name">edit-delete-symbolic</property>
+                    <style>
+                      <class name="bottomButtons"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="notesView">
+            <property name="hexpand">True</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkTextView" id="noteContent">
+                <property name="buffer">textBoxContent</property>
+                <property name="hscroll-policy">natural</property>
+                <property name="indent">2</property>
+                <property name="left-margin">10</property>
+                <property name="margin-bottom">2</property>
+                <property name="margin-end">5</property>
+                <property name="margin-start">5</property>
+                <property name="margin-top">5</property>
+                <property name="pixels-above-lines">10</property>
+                <property name="right-margin">8</property>
+                <property name="top-margin">2</property>
+                <property name="vexpand">True</property>
+                <property name="vscroll-policy">natural</property>
+                <property name="wrap-mode">word</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <child>
+                  <object class="GtkLabel" id="noteName">
+                    <property name="hexpand">True</property>
+                    <property name="label">sampleNoteName</property>
+                    <property name="margin-bottom">2</property>
+                    <property name="margin-end">4</property>
+                    <property name="margin-start">10</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="editName">
+                    <property name="hexpand">True</property>
+                    <property name="icon-name">edit-find-replace-symbolic</property>
+                    <property name="margin-bottom">2</property>
+                    <property name="margin-end">4</property>
+                    <style>
+                      <class name="bottomButtons"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="saveNote">
+                    <property name="hexpand">True</property>
+                    <property name="icon-name">emblem-default-symbolic</property>
+                    <property name="margin-bottom">2</property>
+                    <property name="margin-end">5</property>
+                    <style>
+                      <class name="bottomButtons"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkTextBuffer" id="textBoxContent">
+        <property name="enable-undo">False</property>
+      </object>
+    </child>
+  </object>
+</interface>
